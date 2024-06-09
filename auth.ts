@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { getStringFromBuffer } from './lib/utils';
 import { getUser } from './app/login/actions';
 
-export const { auth, signIn, signOut } = NextAuth({
+const nextAuthConfig = {
   ...authConfig,
   providers: [
     CredentialsProvider({
@@ -61,6 +61,8 @@ export const { auth, signIn, signOut } = NextAuth({
       return token;
     }
   }
-});
+};
 
-// If signOut is not provided by Next
+const { auth, signIn, signOut } = NextAuth(nextAuthConfig);
+
+export { auth, signIn, signOut };

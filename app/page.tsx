@@ -87,6 +87,8 @@ const Home = () => {
       <p style={{ paddingTop: '20px' }}>
         Don't have an account? <Link href="/signup" legacyBehavior><a style={{ color: 'blue', textDecoration: 'underline' }}>Sign up</a></Link>
       </p>
+
+      
     </div>
   );
 };
@@ -100,3 +102,4 @@ async function signIn(email, password) {
   }
   return false;
 }
+
